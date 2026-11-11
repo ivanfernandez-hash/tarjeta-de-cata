@@ -44,20 +44,37 @@ h1{font-size:32px !important;letter-spacing:.04em !important}
 
 html{background:#2E0610}
 .guia{border:1px solid #C9A24B;background:rgba(201,162,75,.12);padding:10px 14px 14px}
-.guia summary{list-style:none;cursor:pointer;margin:0;min-height:36px}
+.guia summary{list-style:none;cursor:pointer;margin:0;min-height:44px}
 .guia summary::-webkit-details-marker{display:none}
 .guia .chev{font-family:'Cinzel',serif;font-size:14px;color:#2E0610;transition:transform .2s}
 .guia:not([open]) .chev{transform:rotate(-90deg)}
-.guia summary:focus-visible{outline:2px solid #C9A24B;outline-offset:3px}
-.gh{font-family:'Cinzel',serif;font-weight:700;font-size:12.5px;letter-spacing:.14em;color:#4A0C1A;margin:10px 0 6px}
-.gl{display:flex;flex-wrap:wrap;gap:6px 16px}
-.gi{display:inline-flex;align-items:center;gap:7px;font-size:18px;font-weight:600;color:#2E0610;line-height:1.2}
-.sw{flex:none;width:16px;height:16px;border-radius:50%;border:1.5px solid #3D0A15;box-sizing:border-box}
-.fam{display:grid;grid-template-columns:104px 1fr;gap:2px 12px;padding:5px 0;border-top:1px solid rgba(201,162,75,.6)}
-.fam:first-of-type{border-top:0}
-.fam b{font-family:'Cinzel',serif;font-weight:700;font-size:12px;letter-spacing:.1em;color:#4A0C1A;padding-top:3px}
-.fam span{font-size:18px;font-weight:600;font-style:italic;color:#2E0610;line-height:1.25}
-@media (max-width:560px){.fam{grid-template-columns:1fr}.gi{font-size:17px}.fam span{font-size:17px}}
+.guia summary:focus-visible,.gtab:focus-visible{outline:2px solid #C9A24B;outline-offset:3px}
+.gtabs{display:flex;gap:8px;margin:4px 0 12px}
+.gtab{flex:1;min-height:44px;font-family:'Cinzel',serif;font-weight:700;font-size:13px;letter-spacing:.14em;color:#4A0C1A;background:transparent;border:1.5px solid #C9A24B;cursor:pointer;padding:8px 6px}
+.gtab[aria-selected="true"]{background:#4A0C1A;color:#F7EFDD;border-color:#4A0C1A}
+.gh{font-family:'Cinzel',serif;font-weight:700;font-size:12.5px;letter-spacing:.14em;color:#4A0C1A;margin:14px 0 4px;padding-bottom:4px;border-bottom:1px solid #C9A24B}
+.gh small{display:block;font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-weight:600;font-style:italic;letter-spacing:0;color:#5A4210;margin-top:2px}
+.gr{display:grid;grid-template-columns:20px minmax(120px,170px) 1fr;column-gap:12px;align-items:start;padding:7px 0;border-bottom:1px solid rgba(201,162,75,.5)}
+.gr:last-child{border-bottom:0}
+.sw{width:18px;height:18px;border-radius:50%;border:1.5px solid #3D0A15;box-sizing:border-box;margin-top:3px}
+.gn{font-size:19px;font-weight:700;color:#2E0610;line-height:1.2}
+.gd{font-size:17.5px;font-weight:600;color:#3D0A15;line-height:1.25}
+.ga{display:grid;grid-template-columns:minmax(96px,150px) 1fr;column-gap:12px;align-items:start;padding:7px 0;border-bottom:1px solid rgba(201,162,75,.5)}
+.ga:last-child{border-bottom:0}
+.ga b{font-family:'Cinzel',serif;font-weight:700;font-size:12px;letter-spacing:.08em;color:#4A0C1A;padding-top:4px;line-height:1.3}
+.ga span{font-size:18px;font-weight:600;font-style:italic;color:#2E0610;line-height:1.25}
+.gk{display:grid;grid-template-columns:minmax(80px,110px) 1fr;column-gap:12px;padding:6px 0;border-bottom:1px solid rgba(201,162,75,.5)}
+.gk:last-child{border-bottom:0}
+.gk b{font-family:'Cinzel',serif;font-weight:700;font-size:12px;letter-spacing:.08em;color:#4A0C1A;padding-top:4px}
+.gk span{font-size:17.5px;font-weight:600;color:#2E0610;line-height:1.25}
+@media (max-width:560px){
+.guia{padding:8px 10px 12px}
+.gr{grid-template-columns:20px 1fr;row-gap:1px}
+.gr .gd{grid-column:2}
+.gn{font-size:18px}.gd{font-size:17px}
+.ga{grid-template-columns:96px 1fr}.ga span{font-size:17px}
+.gk{grid-template-columns:84px 1fr}.gk span{font-size:17px}
+}
 @media print{.guia{display:none}}
 </style>
 </head>
@@ -107,37 +124,51 @@ html{background:#2E0610}
 </div>
 <details class="guia" open>
 <summary class="sec"><i></i><b>GUÍA DE COLORES Y AROMAS</b><span class="chev" aria-hidden="true">▾</span><i></i></summary>
-<div class="gh">COLOR · VINOS TINTOS</div>
-<div class="gl">
-<span class="gi"><span class="sw" style="background:#4B1033"></span>Violáceo (joven)</span>
-<span class="gi"><span class="sw" style="background:#8E1B2E"></span>Cereza</span>
-<span class="gi"><span class="sw" style="background:#7A1228"></span>Rubí</span>
-<span class="gi"><span class="sw" style="background:#5E0F1A"></span>Granate</span>
-<span class="gi"><span class="sw" style="background:#9A4A2E"></span>Teja (evolucionado)</span>
-<span class="gi"><span class="sw" style="background:#8A5A2B"></span>Caoba / ocre</span>
+<div class="gtabs" role="tablist" aria-label="Guía de cata">
+<button type="button" class="gtab" role="tab" id="tab-col" aria-selected="true" aria-controls="pan-col">COLORES</button>
+<button type="button" class="gtab" role="tab" id="tab-aro" aria-selected="false" aria-controls="pan-aro" tabindex="-1">AROMAS</button>
 </div>
-<div class="gh">COLOR · VINOS BLANCOS</div>
-<div class="gl">
-<span class="gi"><span class="sw" style="background:#E6E8A8"></span>Amarillo verdoso</span>
-<span class="gi"><span class="sw" style="background:#EBDD8A"></span>Pajizo</span>
-<span class="gi"><span class="sw" style="background:#D9B24A"></span>Dorado</span>
-<span class="gi"><span class="sw" style="background:#B8741F"></span>Ámbar</span>
+<div id="pan-col" role="tabpanel" aria-labelledby="tab-col">
+<div class="gh">VINOS TINTOS<small>De más joven a más evolucionado</small></div>
+<div class="gr" role="row"><span class="sw" style="background:#4B1033" aria-hidden="true"></span><span class="gn">Púrpura / violáceo</span><span class="gd">Vino muy joven. Reflejos azulados o violetas en el borde.</span></div><div class="gr" role="row"><span class="sw" style="background:#8E1B2E" aria-hidden="true"></span><span class="gn">Cereza</span><span class="gd">Joven y vivo. Fruta fresca, poca o ninguna crianza.</span></div><div class="gr" role="row"><span class="sw" style="background:#7A1228" aria-hidden="true"></span><span class="gn">Rubí</span><span class="gd">Color franco y brillante. Joven o crianza corta.</span></div><div class="gr" role="row"><span class="sw" style="background:#5E0F1A" aria-hidden="true"></span><span class="gn">Granate</span><span class="gd">Rojo profundo con matiz oscuro. Crianza media o uvas de mucha capa.</span></div><div class="gr" role="row"><span class="sw" style="background:#9A4A2E" aria-hidden="true"></span><span class="gn">Teja / ladrillo</span><span class="gd">Borde anaranjado. Vino evolucionado: reserva o gran reserva.</span></div><div class="gr" role="row"><span class="sw" style="background:#8A5A2B" aria-hidden="true"></span><span class="gn">Caoba / ocre</span><span class="gd">Marrón rojizo. Muy envejecido, o ya pasado de punto.</span></div>
+<div class="gh">VINOS BLANCOS<small>De más joven a más evolucionado</small></div>
+<div class="gr" role="row"><span class="sw" style="background:#E6E8A8" aria-hidden="true"></span><span class="gn">Amarillo verdoso</span><span class="gd">Joven y fresco. Suele tener acidez alta.</span></div><div class="gr" role="row"><span class="sw" style="background:#EBDD8A" aria-hidden="true"></span><span class="gn">Pajizo</span><span class="gd">Amarillo limpio. Joven o con poca crianza.</span></div><div class="gr" role="row"><span class="sw" style="background:#D9B24A" aria-hidden="true"></span><span class="gn">Dorado</span><span class="gd">Más cuerpo y edad. Frecuente con crianza en barrica.</span></div><div class="gr" role="row"><span class="sw" style="background:#B8741F" aria-hidden="true"></span><span class="gn">Ámbar</span><span class="gd">Oxidativo o muy envejecido. Típico de generosos y dulces.</span></div>
+<div class="gh">VINOS ROSADOS</div>
+<div class="gr" role="row"><span class="sw" style="background:#E8B49A" aria-hidden="true"></span><span class="gn">Piel de cebolla</span><span class="gd">Muy pálido y anaranjado. Estilo delicado y ligero.</span></div><div class="gr" role="row"><span class="sw" style="background:#F0968A" aria-hidden="true"></span><span class="gn">Salmón</span><span class="gd">Rosa anaranjado. Fresco y afrutado.</span></div><div class="gr" role="row"><span class="sw" style="background:#D9607A" aria-hidden="true"></span><span class="gn">Frambuesa</span><span class="gd">Rosa intenso. Más maceración y más cuerpo.</span></div>
+<div class="gh">QUÉ OBSERVAR EN LA COPA<small>Inclínala sobre un fondo blanco y con buena luz</small></div>
+<div class="gk"><b>CAPA</b><span>Intensidad del color: baja, media o alta. Más capa suele indicar más concentración.</span></div>
+<div class="gk"><b>RIBETE</b><span>Borde del vino. En tintos, violeta indica juventud y teja o anaranjado indica evolución.</span></div>
+<div class="gk"><b>LIMPIDEZ</b><span>Debe verse brillante y transparente. La turbidez puede ser un defecto.</span></div>
+<div class="gk"><b>LÁGRIMA</b><span>Lágrimas lentas y gruesas sugieren más alcohol y más cuerpo.</span></div>
 </div>
-<div class="gh">COLOR · VINOS ROSADOS</div>
-<div class="gl">
-<span class="gi"><span class="sw" style="background:#E8B49A"></span>Piel de cebolla</span>
-<span class="gi"><span class="sw" style="background:#F0968A"></span>Salmón</span>
-<span class="gi"><span class="sw" style="background:#D9607A"></span>Frambuesa</span>
+<div id="pan-aro" role="tabpanel" aria-labelledby="tab-aro" hidden>
+<div class="gh">PRIMARIOS<small>Vienen de la uva y del terreno</small></div>
+<div class="ga"><b>FRUTAL</b><span>Cereza, fresa, mora, ciruela, manzana, pera, cítricos, melocotón, piña</span></div>
+<div class="ga"><b>FLORAL</b><span>Violeta, rosa, azahar, acacia, jazmín</span></div>
+<div class="ga"><b>VEGETAL</b><span>Hierba cortada, pimiento verde, helecho, heno, té, tomillo</span></div>
+<div class="ga"><b>MINERAL</b><span>Piedra mojada, tiza, pedernal, salinidad</span></div>
+<div class="gh">SECUNDARIOS<small>Vienen de la fermentación</small></div>
+<div class="ga"><b>LÁCTEO</b><span>Mantequilla, nata, yogur</span></div>
+<div class="ga"><b>LEVADURA</b><span>Pan, brioche, masa, galleta</span></div>
+<div class="gh">TERCIARIOS<small>Vienen de la crianza en barrica o botella</small></div>
+<div class="ga"><b>ESPECIADO</b><span>Pimienta, clavo, canela, vainilla, regaliz, anís</span></div>
+<div class="ga"><b>MADERA Y TOSTADO</b><span>Roble, cedro, tostado, café, chocolate, caramelo, humo</span></div>
+<div class="ga"><b>EVOLUCIÓN</b><span>Cuero, tabaco, trufa, sotobosque, setas, frutos secos, fruta pasa</span></div>
 </div>
-<div class="gh" style="margin-top:14px">FAMILIAS DE AROMAS</div>
-<div class="fam"><b>FRUTAL</b><span>Cereza, fresa, mora, ciruela, manzana, pera, cítricos, melocotón, piña</span></div>
-<div class="fam"><b>FLORAL</b><span>Violeta, rosa, azahar, acacia, jazmín</span></div>
-<div class="fam"><b>VEGETAL</b><span>Hierba cortada, pimiento verde, helecho, heno, té, tomillo</span></div>
-<div class="fam"><b>ESPECIADO</b><span>Pimienta, clavo, canela, vainilla, regaliz, anís</span></div>
-<div class="fam"><b>MADERA Y TOSTADO</b><span>Roble, cedro, tostado, café, chocolate, caramelo, humo</span></div>
-<div class="fam"><b>LÁCTEO</b><span>Mantequilla, nata, yogur, brioche</span></div>
-<div class="fam"><b>TERROSO Y ANIMAL</b><span>Tierra mojada, sotobosque, setas, cuero, trufa, mineral</span></div>
 </details>
+<script>
+(function(){
+  var tabs=[document.getElementById('tab-col'),document.getElementById('tab-aro')];
+  var pans=[document.getElementById('pan-col'),document.getElementById('pan-aro')];
+  function show(i){tabs.forEach(function(t,k){t.setAttribute('aria-selected',k===i?'true':'false');t.tabIndex=k===i?0:-1;pans[k].hidden=k!==i;});}
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){show(i);});
+    t.addEventListener('keydown',function(e){
+      if(e.key==='ArrowRight'||e.key==='ArrowLeft'){var n=(i+1)%2;show(n);tabs[n].focus();e.preventDefault();}
+    });
+  });
+})();
+</script>
 <div>
 <div class="sec"><i></i><b>EL VINO</b><i></i></div>
 <div class="g2">
